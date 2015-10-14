@@ -1,6 +1,6 @@
 #动作 Actions
 
-Actions 继承了Node的属性。actions通常会修改对象的一些属性，如位置，旋转，缩放等。如果这些熟悉在一段时间内被修改，它们是`IntervalAction` actions，相反则是 `InstantAction` actions.
+Actions 继承了Node的属性。actions通常会修改对象的一些属性，如位置，旋转，缩放等。如果这些属性在一段时间内被修改，它们是`IntervalAction` actions，相反则是 `InstantAction` actions.
 
 例如，`MoveBy` action是在一段时间内修改了位置属性，因此，它是`IntervalAction`的子类.
 
@@ -21,7 +21,7 @@ Actions 继承了Node的属性。actions通常会修改对象的一些属性，�
 * [EaseInOut](http://www.cocos2d-x.org/reference/native-cpp/V3.0rc1/da/d63/classcocos2d_1_1_ease_out.html)
 * [Speed](http://www.cocos2d-x.org/reference/native-cpp/V3.0rc1/d7/d5e/classcocos2d_1_1_speed.html)
 
-等. (更多信息，详见`ActionsEaseTest.cpp`实例)
+等. (更多信息，详见[ActionsEaseTest.cpp](https://github.com/cocos2d/cocos2d-x/blob/v3/tests/cpp-tests/Classes/ActionsTest/ActionsTest.cpp)实例)
 
 你可以通过用ActionManager来暂停和恢复所有actions:
 
@@ -97,5 +97,5 @@ Actions 继承了Node的属性。actions通常会修改对象的一些属性，�
     sprite->runAction(Repeat::create(act1, 1));
 ```
 
-act1是持续0.5秒的MoveBy action,并且使用位置Point(100,0)的值？.
+act1是持续0.5秒的MoveBy action,并且使用位置Point(100,0)的值.
 

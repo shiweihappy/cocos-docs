@@ -6,7 +6,7 @@
 
 ## How to use
 
-First include the `xxx/cocos2d-html5/CCBoot.js` into `index.html`.
+First include the `xxx/frameworks/cocos2d-html5/CCBoot.js` into `index.html`.
 
 Then you can type the code to boot your game, which is usually put in `main.js`.
 
@@ -77,7 +77,7 @@ classReleaseMode : "classReleaseMode"
 Use ``cc.game.config[cc.game.CONFIG_KEY.***]` to get the config value of game.
 
 ## EVENT\_HIDE & EVENT\_SHOW
-With cocos-js3.0 we can add event listeners for entering background or foreground,such as switching broswer's tab or pressing your home button on cellphone.And you can add two or more handlers to the same event. 
+With cocos-js3.0 we can add event listeners for entering background or foreground,such as switching browser's tab or pressing your home button on cellphone.And you can add two or more handlers to the same event. 
 
 	cc.eventManager.addCustomListener(cc.game.EVENT_HIDE, function(){
         //onEnterBackground handler

@@ -11,8 +11,8 @@ var PlayScene = cc.Scene.extend({
         this.space.gravity = cp.v(0, -350);
         // set up Walls
         var wallBottom = new cp.SegmentShape(this.space.staticBody,
-            cp.v(0, g_groundHight),// start point
-            cp.v(4294967295, g_groundHight),// MAX INT:4294967295
+            cp.v(0, g_groundHeight),// start point
+            cp.v(4294967295, g_groundHeight),// MAX INT:4294967295
             0);// thickness of wall
         this.space.addStaticShape(wallBottom);
 
@@ -43,7 +43,7 @@ var PlayScene = cc.Scene.extend({
         this._super();
         this.initPhysics();
 
-        this.gameLayer = cc.Layer.create();
+        this.gameLayer = new cc.Layer();
 
         //add three layer in the right order
         this.gameLayer.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);

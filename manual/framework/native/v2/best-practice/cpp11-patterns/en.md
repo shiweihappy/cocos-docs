@@ -3,7 +3,7 @@
 ##Removed Objective-C patterns
 ###No more 'CC' prefix for C++ classes and free functions
 ####Changes in Classes
-Since cocos2d-x already uses the *cocos2d* namespace, there is not need to add the prefix *CC* to all its classes.
+Since Cocos2d-x already uses the *cocos2d* namespace, there is not need to add the prefix *CC* to all its classes.
 
 Examples:
 
@@ -16,7 +16,7 @@ Examples:
 
 *Note:* v2.1 class names are still available, but they were tagged as deprecated.
 
-####Changes in free funcitons
+####Changes in free functions
 for the drawing primitives:
 
 - They were added in the *DrawPrimitives* namespace
@@ -111,12 +111,12 @@ void setTexParameters(const ccTexParams& texParams);
 
 ##Adoption of C++11
 ###Overview
-A subset of C++11 features are being used in cocos2d-x:
+A subset of C++11 features are being used in Cocos2d-x:
 
 - *std::function*, including lambda objects for callbacks
-- strongly typed enums, for most of the cocos2d-x enums and constants
+- strongly typed enums, for most of the Cocos2d-x enums and constants
 - *std::thread* for threading
-- *override* context keyword, for overriden methods
+- *override* context keyword, for overridden methods
 
 ###Std::function
 
@@ -210,6 +210,6 @@ class Sprite : public Node {
 
 ##Best practices
 
-- Always prefer cocos2d-x built-in container and memory management rules
-- Obey the naming convention and coding style of cocos2d-x
-- Obey to [cocos2d-x cpp programming guide](../cpp_coding_style/en.md)
+- Always prefer Cocos2d-x built-in container and memory management rules
+- Obey the naming convention and coding style of Cocos2d-x
+- Obey to [Cocos2d-x cpp programming guide](../cpp_coding_style/en.md)

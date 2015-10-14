@@ -24,7 +24,7 @@ Here is the building process:
 
 When you add new images into the *TexturePacker* folder, TexturePacker will automatically detect the changes and load the images.
 
-2. Choose "data format" to "cocos2d" and "data format" to "png" from the TextureSettings panel(which is the default settings).
+2. Choose "Data format" to "cocos2d" and "Texture format" to "png" from the Settings panel(which is the default settings).
 
 3. Specify the *Data file* and *Texture file* path. Here we set the path at *res* directory and we set the data file name to "running.plist" and the texture file to "running.png".
 
@@ -79,8 +79,9 @@ sprite:null,
 Then we should replace the player creation method to:
 
 ```
-this.sprite = cc.Sprite.create("#runner0.png");
+this.sprite = new cc.Sprite("#runner0.png");
 ```
+<em>The dash ("#") character at the beginning of the sprite's filename is a convention, and that means it will create a sprite from the sprite frame's name. In our case "runner0.png" is part of the sprite sheet.</em>
 
 We can easily create a animation with the following code:
 
@@ -96,10 +97,10 @@ for (var i = 0; i < 8; i++) {
     animFrames.push(frame);
 }
 //3.create a animation with the spriteframe array along with a period time
-var animation = cc.Animation.create(animFrames, 0.1);
+var animation = new cc.Animation(animFrames, 0.1);
 
 //4.wrap the animate action with a repeat forever action
-this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
+this.runningAction = new cc.RepeatForever(new cc.Animate(animation));
 ```
 
 The animation is constructed from a series of small images(from runner0.png to runner7.png) in the spritesheet.
@@ -130,7 +131,7 @@ var AnimationLayer = cc.Layer.extend({
 
         // create sprite sheet
         cc.spriteFrameCache.addSpriteFrames(res.runner_plist);
-        this.spriteSheet = cc.SpriteBatchNode.create(res.runner_png);
+        this.spriteSheet = new cc.SpriteBatchNode(res.runner_png);
         this.addChild(this.spriteSheet);
 
 
@@ -142,9 +143,9 @@ var AnimationLayer = cc.Layer.extend({
             animFrames.push(frame);
         }
 
-        var animation = cc.Animation.create(animFrames, 0.1);
-        this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
-        this.sprite = cc.Sprite.create("#runner0.png");
+        var animation = new cc.Animation(animFrames, 0.1);
+        this.runningAction = new cc.RepeatForever(new cc.Animate(animation));
+        this.sprite = new cc.Sprite("#runner0.png");
         this.sprite.attr({x:80, y:85});
         this.sprite.runAction(this.runningAction);
         this.spriteSheet.addChild(this.sprite);

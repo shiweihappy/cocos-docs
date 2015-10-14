@@ -77,16 +77,16 @@ var GameOverLayer = cc.LayerColor.extend({
         this.init();
     },
     init:function () {
-        this._super(cc.c4b(0, 0, 0, 180));
+        this._super(cc.color(0, 0, 0, 180));
         var winSize = cc.director.getWinSize();
 
         var centerPos = cc.p(winSize.width / 2, winSize.height / 2);
         cc.MenuItemFont.setFontSize(30);
-        var menuItemRestart = cc.MenuItemSprite.create(
-            cc.Sprite.create(s_restart_n),
-            cc.Sprite.create(s_restart_s),
+        var menuItemRestart = new cc.MenuItemSprite(
+            new cc.Sprite(res.restart_n_png),
+            new cc.Sprite(res.restart_s_png),
             this.onRestart, this);
-        var menu = cc.Menu.create(menuItemRestart);
+        var menu = new cc.Menu(menuItemRestart);
         menu.setPosition(centerPos);
         this.addChild(menu);
     },
@@ -257,8 +257,8 @@ And then let's add a new method named *initAction*:
             animFrames.push(frame);
         }
 
-        var animation = cc.Animation.create(animFrames, 0.1);
-        this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
+        var animation = new cc.Animation(animFrames, 0.1);
+        this.runningAction = new cc.RepeatForever(new cc.Animate(animation));
         this.runningAction.retain();
 
         // init jumpUpAction
@@ -269,8 +269,8 @@ And then let's add a new method named *initAction*:
             animFrames.push(frame);
         }
 
-        animation = cc.Animation.create(animFrames, 0.2);
-        this.jumpUpAction = cc.Animate.create(animation);
+        animation = new cc.Animation(animFrames, 0.2);
+        this.jumpUpAction = new cc.Animate(animation);
         this.jumpUpAction.retain();
 
         // init jumpDownAction
@@ -281,8 +281,8 @@ And then let's add a new method named *initAction*:
             animFrames.push(frame);
         }
 
-        animation = cc.Animation.create(animFrames, 0.3);
-        this.jumpDownAction = cc.Animate.create(animation);
+        animation = new cc.Animation(animFrames, 0.3);
+        this.jumpDownAction = new cc.Animate(animation);
         this.jumpDownAction.retain();
     },
 ```
@@ -301,8 +301,8 @@ this.initAction();
 //            var frame = cc.spriteFrameCache.getSpriteFrame(str);
 //            animFrames.push(frame);
 //        }
-//        var animation = cc.Animation.create(animFrames, 0.1);
-//        this.runningAction = cc.RepeatForever.create(cc.Animate.create(animation));
+//        var animation = new cc.Animation(animFrames, 0.1);
+//        this.runningAction = new cc.RepeatForever(new cc.Animate(animation));
 ```
 
 ###Handling Touch Event
@@ -349,7 +349,7 @@ Now let's add three callbacks we needed to handle our touch event:
     },
 ```
 
-When you touch the scrren the *onTouchBegan* method will be called. When you hold your finger and move it around, the *onTouchMoved* method will
+When you touch the screen the *onTouchBegan* method will be called. When you hold your finger and move it around, the *onTouchMoved* method will
 be called. When you release your finger, the *onTouchEnded* method will be called.
 
 Here we have used our simple gesture recognizer to detect the "swipe out" gesture.

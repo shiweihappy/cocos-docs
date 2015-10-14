@@ -20,7 +20,7 @@ A cc.Layer is a cc.Node, which  knows how to handle touch events. Layers know ho
 
 ![layer](res/layerstructure.png)
 
-The cc.Layer is where you can define touch event handlers. By implementing a method to handle one of touch events (ccTouchBegan, ccTouchMoved, ccTouchEnded, or ccTouchCancelled), a cc.Layer can interact with the player. These touch events are transmited to all the layers within a scene, from front to back, until some layer catch the event and accept it.
+The cc.Layer is where you can define touch event handlers. By implementing a method to handle one of touch events (ccTouchBegan, ccTouchMoved, ccTouchEnded, or ccTouchCancelled), a cc.Layer can interact with the player. These touch events are transmitted to all the layers within a scene, from front to back, until some layer catch the event and accept it.
 
 While complex applications will require you to define custom cc.Layer subclasses, Cocos2d provides several predefined layers. Some examples include cc.Menu (a simple menu layer), cc.ColorLayer (a layer that draws a solid color), and cc.LayerMultiplex (a layer that lets you multiplex its children, activating one at a time while disabling the others).
 
@@ -84,7 +84,7 @@ Cocos2d-html5 has two different ways to handle touch events. They are defined by
 
 Using TargetedTouchDelegate has two benefits:
 
-1. You don't have to deal with cc.Sets, the dispatcher will done the job. So you can get the rigth type of cc.Touch per time.
+1. You don't have to deal with cc.Sets, the dispatcher will done the job. So you can get the right type of cc.Touch per time.
 
 2. You can claim a cc.Touch, which is returning true in onTouchBegan. Updates of the claimed
     touch is sent only to the delegate(s) that claimed them. So if you get a moved,
@@ -100,7 +100,7 @@ Using StandardTouchDelegate has two benefits:
 
 ## Make your first Game scene
 
-In last tutorial, we have analysed the execution path of a cocos2d-html5 game. We know that in main.js, we load our first game scene in **applicationDidFinishLaunching**, here is the code snippet which does the real trick:
+In last tutorial, we have analysed the execution path of a Cocos2d-html5 game. We know that in main.js, we load our first game scene in **applicationDidFinishLaunching**, here is the code snippet which does the real trick:
 
 ```
  //load resources
@@ -135,7 +135,7 @@ Here are two paragraphs in [here](http://www.gamefromscratch.com/post/2012/06/06
 The first one:
 
 > We are creating a new object by extending cc.Application. If you are familiar with C++, Java or C# you may have a little confused when you seeing this code. Because they have something in common and some differences in the meantime. Here is the reason, JavaScript isn’t really “object oriented” in
-the way you are familiar with, it is [prototype based](http://en.wikipedia.org/wiki/Prototype-based). I can not explain all the detials here, but basically there are no classes. Instead there are “prototypes” that you can clone and extend. So essentially you defined something once, which will be used as a prototype for creating “objects” in the future. 
+the way you are familiar with, it is [prototype based](http://en.wikipedia.org/wiki/Prototype-based). I can not explain all the details here, but basically there are no classes. Instead there are “prototypes” that you can clone and extend. So essentially you defined something once, which will be used as a prototype for creating “objects” in the future. 
 
 The second one:
 
@@ -273,7 +273,7 @@ Let's go through all the details from 1-7:
 
 **Note:**
 
-> Don't try to copy these code or remember all of these things. Because cocos2d-html5 is under active development. The API will be minor changed due to some reasons. So try to understand it.
+> Don't try to copy these code or remember all of these things. Because Cocos2d-html5 is under active development. The API will be minor changed due to some reasons. So try to understand it.
  
 And also we should define a Menu scene:
 
@@ -294,7 +294,7 @@ Once the scene is created, a **onEnter** function should be defined. It defined 
 
 ## Summary
 
-In this tutorial, I have shown you the basic concepts you need to know when you first start programming cocos2d-html5 games. And also giving you a detailed explanation of how to set up your first game scene. Hope you enjoy it and happy coding! The related sample project can be downloaded at [here](res/Parkour.zip).
+In this tutorial, I have shown you the basic concepts you need to know when you first start programming Cocos2d-html5 games. And also giving you a detailed explanation of how to set up your first game scene. Hope you enjoy it and happy coding! The related sample project can be downloaded at [here](res/Parkour.zip).
 
 ## Where to go from here
 
